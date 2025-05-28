@@ -57,7 +57,7 @@ class GraphDataset(Dataset):
     
     def get(self, idx):
         data = dictToGraphObject(self.graphs_dicts[idx])
-        data.idx = torch.tensor([idx])
+        data.idx = torch.tensor(idx, dtype=torch.long) 
         return data
 
     def _count_graphs(self):
